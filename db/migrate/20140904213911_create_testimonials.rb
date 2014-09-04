@@ -3,8 +3,9 @@ class CreateTestimonials < ActiveRecord::Migration
     create_table :testimonials do |t|
       t.references :user
       t.references :listing
+      t.string :title
       t.integer :rating
-      t.string :testimonials_text
+      t.string :comment
       t.timestamps
     end
   end
