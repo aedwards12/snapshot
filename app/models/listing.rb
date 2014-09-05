@@ -4,5 +4,5 @@ class Listing < ActiveRecord::Base
   has_many :tagables
   has_many :tags, through: :tagables
   has_many :testimonials
-  has_many :photographs, as: :photographable
+  has_many :photos, as: :photographable
 end
