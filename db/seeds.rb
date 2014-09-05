@@ -5,24 +5,53 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# user1 = User.create(name: 'Cassie', email: 'cassie@email.com', address: '123 Street')
-
 # user2 = User.create(name: 'Anthony', email: 'anthony@email.com', address: '678 Street')
 
-# listing1 = Listing.create(host: user1, available_from: Time.now, available_to: Time.now, address: '345 Street')
+require 'faker'
 
-# booking1 = Booking.create(producer: User.find(2), listing: Listing.first, booked_from: Time.now, booked_to: Time.now, price: 50)
 
-# tag_names = ["garden", "wall", "mansion"]
+	20.times do 
+	  address ="#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state}"
+	  user1 = User.create(name: Faker::Name.name, email: Faker::Internet.email, address: address)
+	end
 
-# tag_names.each do |t| 
-#   Tag.create(name: t)
-# end
+	40.times do 
+		year = "2014"
+		month = [9, 10, 11, 12].sample
+	  day = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28].sample
+	  to_day = [1,2 ,3,4,5,6,7,8,9].sample
+	  time_to = "18:00:00"
+	  time_from = "12:00:05"
+	  date_to = " #{year}-#{month}-#{to_day} #{time_to}"
+	  date_from  = "#{year}-#{month}-#{day} #{time_from}"
+	  address =" #{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state}"
+		listing1 = Listing.create(host: User.all.sample, available_from: date_from, available_to: date_to, address: address)
+  end
+ 
+	15.times do 
+	  Booking.create(producer: User.all.sample, listing: Listing.all.sample, booked_from: Listing.all.sample.available_from.to_s, booked_to:Listing.all.sample.available_to.to_s, price: rand(100)+1)
+	end
 
-# Tagable.create(listing: Listing.first, tag: Tag.first)
+	tag_names = ["garden", "wall", "mansion", "couch", "bed", "pool", "inground pool", "window", "pond", "private beach", "tree", "basement", "spookey", "basement", "skylight", "natural light", "cave", "car", "apartment", "house", "barn", "stable", "ranch", "antique"]
 
-#Testimonial.create(producer: User.first, listing: Listing.first, title: "testing one", rating: 4, comment: "This is the best app ever and ever and ever amen!")
+	tag_names.each do |t| 
+	  Tag.create(name: t)
+	end
+ 
+	20.times do 
+	  Tagable.create(listing: Listing.all.sample, tag: Tag.all.sample)
+	end
 
-# Photo.create(title: "myYard", url: "image_test.jpg", photographable: User.first)
-Photo.create(title: "myYard", url: "image_test.jpg", photographable: Listing.first)
+	40.times do 
+	  Testimonial.create(producer: User.all.sample, listing: Listing.all.sample, title: Faker::Name.title, rating: rand(5), comment: Faker::Hacker.say_something_smart)
+	end
+
+	User.all.each do |user|
+	 	Photo.create(title: Faker::Name.title, url: "image_test.jpg", photographable: user)
+	end
+
+	60.times do 
+	  Photo.create(title: Faker::Name.title, url: "image_test.jpg", photographable: Listing.all.sample)
+	end
+
+
