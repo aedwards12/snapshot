@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user1 = User.create(name: 'Cassie', email: 'cassie@email.com', address: '123 Street')
+
+user2 = User.create(name: 'Anthony', email: 'anthony@email.com', address: '678 Street')
+
+listing1 = Listing.create(host: user1, available_from: Time.now, available_to: Time.now, address: '345 Street')
+
+booking1 = Booking.create(producer: User.find(2), listing: Listing.first, booked_from: Time.now, booked_to: Time.now, price: 50)
