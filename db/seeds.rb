@@ -20,5 +20,4 @@ tag_names.each do |t|
   Tag.create(name: t)
 end
 
-
-#Listings_Tags.create(listing: Listing.first, tag: Tag.first)
+Tagable.create(listing: Listing.first, tag: Tag.first)

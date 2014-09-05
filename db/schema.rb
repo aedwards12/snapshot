@@ -26,11 +26,6 @@ ActiveRecord::Schema.define(version: 20140904215836) do
     t.datetime "updated_at"
   end
 
-  create_table "listing_tags", force: true do |t|
-    t.integer "listing_id"
-    t.integer "tag_id"
-  end
-
   create_table "listings", force: true do |t|
     t.integer  "user_id"
     t.datetime "available_from"
@@ -47,6 +42,11 @@ ActiveRecord::Schema.define(version: 20140904215836) do
     t.string   "photographable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "tagables", force: true do |t|
+    t.integer "listing_id"
+    t.integer "tag_id"
   end
 
   create_table "tags", force: true do |t|
