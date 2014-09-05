@@ -11,9 +11,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140904215836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "listing_id"
+    t.datetime "booked_from"
+    t.datetime "booked_to"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "listing_tags", force: true do |t|
+    t.integer "listing_id"
+    t.integer "tag_id"
+  end
+
+  create_table "listings", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "available_from"
+    t.datetime "available_to"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "photographable_id"
+    t.string   "photographable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "testimonials", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "listing_id"
+    t.string   "title"
+    t.integer  "rating"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
