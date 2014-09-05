@@ -1,3 +1,4 @@
 class Tag < ActiveRecord::Base
-  has_many :listings, through: :listing_tags
+  has_many :tagables	
+  has_many :listings, through: :tagables
 end
