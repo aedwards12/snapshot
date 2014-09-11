@@ -1,0 +1,4 @@
+<h1>searchingable</h1>
+<% @collection.each do |term| %>
+   <%= render partial: "listings", locals: { term: term } %>
+<% end %>
