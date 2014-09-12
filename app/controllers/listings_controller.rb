@@ -1,7 +1,8 @@
 class ListingsController < ApplicationController
 
 	def index
-		search = PgSearch.multisearch("Pennsylvania")
+		p params
+		search = PgSearch.multisearch(params[:term][:location])
 		
 		@collection = []
 		
@@ -9,5 +10,6 @@ class ListingsController < ApplicationController
 		  @collection << Listing.find(item.id)
 	  end
 	  @collection
-	end	
+	end
+
 end
