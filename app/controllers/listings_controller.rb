@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
 
 	def index
-		search = PgSearch.multisearch("Pennsylvania")
+		search = PgSearch.multisearch("New York")
 		
 		@collection = []
 		

@@ -9,3 +9,18 @@
 	border: 1px solid black;
 	margin-bottom: 1em;
 }
+
+
+/*google maps*/
+ html { height: 100% }
+ body { height: 100%; margin: 0; padding: 0 }
+ 
+
+aside {
+	min-width: 20em;
+	min-height: 20em;
+	background-color: orange;
+
+	#map-canvas { height: 19em;
+	width: 19em; }
+}
