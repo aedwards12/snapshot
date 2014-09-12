@@ -1,1 +1,26 @@
-Hello, world!
+Search here!
+
+<form method="get" action="/listings" id="search_listings">
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Location
+        <input name="term[location]" type="text" placeholder="Location" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Start Date
+        <input name="term[start_date]" type="text" placeholder="Start Date" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>End Date
+        <input name="term[end_date]" type="text" placeholder="End Date" />
+      </label>
+    </div>
+  </div>
+  <input type="submit" value="Submit">
+</form>
