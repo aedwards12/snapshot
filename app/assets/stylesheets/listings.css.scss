@@ -17,10 +17,15 @@
  
 
 aside {
-	min-width: 20em;
-	min-height: 20em;
+	min-width: 25em;
+	min-height: 60em;
 	background-color: orange;
 
-	#map-canvas { height: 19em;
-	width: 19em; }
+	#map-canvas { min-width: 25em;
+	min-height: 60em; }
+}
+
+.color{
+		background-color: orange;
+		padding: 0px;
 }
