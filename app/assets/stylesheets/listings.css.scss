@@ -4,7 +4,6 @@
 
 .listing {
 	padding: 1em;
-	/*height: 100px;*/
 	width: 300px;
 	border: 1px solid black;
 	margin-bottom: 1em;
@@ -17,15 +16,11 @@
  
 
 aside {
-	min-width: 25em;
-	min-height: 60em;
-	background-color: orange;
+	width: 25em;
+  height: 60em;
+	padding: 0px;
 
-	#map-canvas { min-width: 25em;
+	 #map-canvas { min-width: 25em;
 	min-height: 60em; }
 }
 
-.color{
-		background-color: orange;
-		padding: 0px;
-}

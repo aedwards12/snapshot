@@ -6,7 +6,7 @@
 	  </div>
   </aside>
 
-  <div class="columns small-12 medium-12 large-6" >
+  <div class="columns small-12 medium-6 large-6" >
   	<h1>Listings</h1>
 			<% @collection.each do |term| %>
   	  <%= render partial: "listings", locals: { term: term } %>
