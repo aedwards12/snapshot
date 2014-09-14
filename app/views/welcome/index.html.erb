@@ -1,26 +1,57 @@
-Search here!
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">Snapshot</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><a href="#">Register</a></li>
+     <!--  <li class="has-dropdown"> -->
+      <li>  
+        <a href="#">Sign-in</a>
+        <!-- <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+          <li class="active"><a href="#">Active link in dropdown</a></li>
+         --></ul>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+ <!--    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul> -->
+  </section>
+</nav>
 
 <form method="get" action="/listings" id="search_listings">
   <div class="row">
-    <div class="large-12 columns">
+    <div class="small-1 columns">
+      <p class="search">
+        Search
+      </p>
+    </div>
+    <div class="small-4 columns">
       <label>Location
-        <input name="term[location]" type="text" placeholder="Location" />
+        <input name="term[location]" type="text" placeholder="Location" size="40"/>
       </label>
     </div>
-  </div>
-  <div class="row">
-    <div class="large-4 columns">
+    <div class="small-3 columns">
       <label>Start Date
-        <input name="term[start_date]" type="text" placeholder="Start Date" />
+        <input name="term[start_date]" type="date" placeholder="Start Date" />
       </label>
     </div>
-  </div>
-  <div class="row">
-    <div class="large-4 columns">
+    <div class="small-3 columns">
       <label>End Date
-        <input name="term[end_date]" type="text" placeholder="End Date" />
+        <input name="term[end_date]" type="date" placeholder="End Date" />
       </label>
     </div>
+    <div class="small-1 columns">
+      <input type="submit" value="Submit">
+    </div>
   </div>
-  <input type="submit" value="Submit">
 </form>
