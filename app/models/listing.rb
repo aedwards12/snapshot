@@ -1,6 +1,8 @@
 class Listing < ActiveRecord::Base
 	include PgSearch
-  multisearchable :against => [:address]
+  pg_search_scope :listing_search, :against => [:address], :associated_against => {
+    :tags => [:name]
+  }
   geocoded_by :address
   after_validation :geocode
 
