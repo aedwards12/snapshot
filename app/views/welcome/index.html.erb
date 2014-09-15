@@ -34,19 +34,17 @@
       <%= label_tag("search_text", "") %>
       <%= text_field_tag("search_text", nil, placeholder: "Desired location or type of venue", size:40) %>
     </div>
-    <div class="small-3 columns">
+    <div class="small-5 columns">
       <%= label_tag("start_date", "From") %>
-      <%= date_field_tag("start_date", nil, placeholder: "Enter your start date", min: Date.today, size:2) %>
-    </div>
-    <div class="small-2 columns">
+      <%= date_field_tag("start_date", nil, placeholder: "Enter your start date", min: Date.today) %>
       <%= time_field_tag("start_time", nil) %>
     </div>
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       <%= label_tag("end_date", "To") %>
       <%= date_field_tag("end_date", nil, placeholder: "Enter your end date", min: Date.today) %>
+      <%= time_field_tag("end_time", nil) %>
     </div>
     <div class="small-1 columns">
-      <%= time_field_tag("end_time", nil) %>
     </div>
   </div>
   <div class="row">
