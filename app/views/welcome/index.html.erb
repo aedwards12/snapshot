@@ -32,21 +32,25 @@
   <div class="row">
     <div class="small-3 columns">
       <%= label_tag("search_text", "") %>
-      <%= text_field_tag("search_text", nil, placeholder: "Desired location or type of venue") %>
+      <%= text_field_tag("search_text", nil, placeholder: "Desired location or type of venue", size:40) %>
     </div>
     <div class="small-3 columns">
-      <%= label_tag("start_date", "Start Date") %>
-      <%= date_field_tag("start_date", nil, placeholder: "Enter your start date") %>
-    </div>
-    <div class="small-3 columns">
-      <%= label_tag("end_date", "End Date") %>
-      <%= date_field_tag("end_date", nil, placeholder: "Enter your end date") %>
+      <%= label_tag("start_date", "From") %>
+      <%= date_field_tag("start_date", nil, placeholder: "Enter your start date", min: Date.today, size:2) %>
     </div>
     <div class="small-2 columns">
-      <%= label_tag("time", "Time") %>
-      <%= select_tag(:time, options_for_select([['', 1], ['Morning', 2], ['Afternoon', 3], ['Evening', 4]]))  %>
+      <%= time_field_tag("start_time", nil) %>
+    </div>
+    <div class="small-3 columns">
+      <%= label_tag("end_date", "To") %>
+      <%= date_field_tag("end_date", nil, placeholder: "Enter your end date", min: Date.today) %>
     </div>
     <div class="small-1 columns">
+      <%= time_field_tag("end_time", nil) %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-1 small-centered columns">
       <%= submit_tag("Search") %>
     </div>
   </div>
