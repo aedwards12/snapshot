@@ -29,45 +29,25 @@
 </nav>
 
 <%= form_tag("/listings", method: "get") do %>
-  <%= label_tag("search_text", "Location") %>
-  <%= text_field_tag("search_text", nil, placeholder: "Location") %>
-  <%= label_tag("start_date", "Start Date") %>
-  <%= date_field_tag("start_date", nil, placeholder: "Enter your start date") %>
-  <%= label_tag("end_date", "End Date") %>
-  <%= date_field_tag("end_date", nil, placeholder: "Enter your end date") %>
-  <%= check_box_tag(:morning) %>
-  <%= label_tag(:morning, "Morning") %>
-  <%= check_box_tag(:afternoon) %>
-  <%= label_tag(:afternoon, "Afternoon") %>
-  <%= check_box_tag(:evening) %>
-  <%= label_tag(:evening, "Evening") %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-<!-- <form method="get" action="/listings" id="search_listings">
   <div class="row">
-    <div class="small-1 columns">
-      <p class="search">
-        Search
-      </p>
-    </div>
-    <div class="small-4 columns">
-      <label>
-        <input name="search_text" type="text" placeholder="Desired location or type of venue" size="40"/>
-      </label>
+    <div class="small-3 columns">
+      <%= label_tag("search_text", "") %>
+      <%= text_field_tag("search_text", nil, placeholder: "Desired location or type of venue") %>
     </div>
     <div class="small-3 columns">
-      <label>Start Date
-        <input name="start_date" type="date" placeholder="Start Date" />
-      </label>
+      <%= label_tag("start_date", "Start Date") %>
+      <%= date_field_tag("start_date", nil, placeholder: "Enter your start date") %>
     </div>
     <div class="small-3 columns">
-      <label>End Date
-        <input name="end_date" type="date" placeholder="End Date" />
-      </label>
+      <%= label_tag("end_date", "End Date") %>
+      <%= date_field_tag("end_date", nil, placeholder: "Enter your end date") %>
+    </div>
+    <div class="small-2 columns">
+      <%= label_tag("time", "Time") %>
+      <%= select_tag(:time, options_for_select([['', 1], ['Morning', 2], ['Afternoon', 3], ['Evening', 4]]))  %>
     </div>
     <div class="small-1 columns">
-      <input type="submit" value="Submit">
+      <%= submit_tag("Search") %>
     </div>
   </div>
-</form> -->
+<% end %>
