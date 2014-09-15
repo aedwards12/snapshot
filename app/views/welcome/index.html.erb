@@ -32,9 +32,15 @@
   <%= label_tag("search_text", "Location") %>
   <%= text_field_tag("search_text", nil, placeholder: "Location") %>
   <%= label_tag("start_date", "Start Date") %>
-  <%= text_field_tag("term[start_date]", nil, placeholder: "Enter your start date") %>
+  <%= date_field_tag("start_date", nil, placeholder: "Enter your start date") %>
   <%= label_tag("end_date", "End Date") %>
-  <%= text_field_tag("term[end_date]", nil, placeholder: "Enter your end date") %>
+  <%= date_field_tag("end_date", nil, placeholder: "Enter your end date") %>
+  <%= check_box_tag(:morning) %>
+  <%= label_tag(:morning, "Morning") %>
+  <%= check_box_tag(:afternoon) %>
+  <%= label_tag(:afternoon, "Afternoon") %>
+  <%= check_box_tag(:evening) %>
+  <%= label_tag(:evening, "Evening") %>
   <%= submit_tag("Search") %>
 <% end %>
 
