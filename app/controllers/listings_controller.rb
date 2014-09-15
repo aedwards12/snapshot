@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
 
 	def index
 		p params
-		search = PgSearch.multisearch(params[:search_text])
+		search = Listing.listing_search(params[:search_text])
 
 		@collection = []
 		
