@@ -57,6 +57,7 @@ require 'faker'
 	  to_day = [1,2 ,3,4,5,6,7,8,9].sample
 	  time_to = "18:00:00"
 	  time_from = "12:00:05"
+
 	  date_to = " #{year}-#{month}-#{to_day} #{time_to}"
 	  date_from  = "#{year}-#{month}-#{day} #{time_from}"
 	  # address =" #{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state}"
