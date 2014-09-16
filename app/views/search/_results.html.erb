@@ -1,8 +1,10 @@
 <h6>search results: <%= @results.length %></h5>
 <% @results.each do |item| %>
-<h5>location: <%= item.address %></h5>
-<p>type: <% item.tags.each do |tag|  %>
-	<%= tag.name  %>
-	<% end %>
+<div class="result-item">
+	<h5>location: <%= item.address %></h5>
+	<p>type: <% item.tags.each do |tag|  %>
+		<%= tag.name  %>
+		<% end %>
 </p>
+</div>
 <% end %>
