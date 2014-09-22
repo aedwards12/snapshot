@@ -4,8 +4,23 @@
 
 .listing {
 	padding: 1em;
-	/*height: 100px;*/
-	width: 300px;
+	/*width: 300px;*/
 	border: 1px solid black;
 	margin-bottom: 1em;
 }
+
+
+/*google maps*/
+ html { height: 100% }
+ body { height: 100%; margin: 0; padding: 0 }
+ 
+
+aside {
+	width: 25em;
+  height: 60em;
+	padding: 0px;
+
+	 #map-canvas { min-width: 25em;
+	min-height: 60em; }
+}
+
