@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
 		# search = PgSearch.multisearch("New York")
 
 		text_search = Listing.listing_search(params[:search_text])		
-		search = text_search
+		p search = text_search
 
 		if params[:start_date] != "" && params[:end_date] != ""
 			start_date_search = Listing.where(available_from: params[:start_date])
