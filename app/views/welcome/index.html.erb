@@ -53,3 +53,11 @@
     </div>
   </div>
 <% end %>
+
+<div id="results"></div>
+
+<script type="text/javascript">
+  $("#search_text").keyup(function(event) {
+  $.get('/post_search?search='+ $(this).val());
+});
+</script>
