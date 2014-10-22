@@ -7,6 +7,7 @@ gem 'rails', '4.1.4'
 gem 'pg'
 gem 'pg_search'
 gem 'geocoder'
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
