@@ -7,7 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+     <h1> <%= link_to "Snapshot", root_path %></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
 
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="left">
+      <li><%= link_to "create listing", new_listing_path%></li>
+    </ul>
+    <ul class="right">
+      <% if user_signed_in? %>
+       <li> Logged in as <strong><%= current_user.email %></strong>.</li>
+       <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+      <% else %>
+         <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
+         <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link active'  %></li>
+      <% end %>
+     <!--  <li class="has-dropdown"> -->
+    </ul>
+
+    <!-- Left Nav Section -->
+ <!--    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul> -->
+  </section>
+</nav>
+<% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 <%= yield %>
 
 </body>

@@ -1,5 +1,3 @@
-
-
 <section class="row">
 	<aside class="columns small-12 medium-12 large-6 color">
 	  <div class="callout panel">
@@ -9,7 +7,7 @@
 
   <div class="columns small-12 medium-6 large-6" >
   	<h1>Listings</h1>
-			<% @listings.each do |listing| %>
+			<% @search_results.each do |listing| %>
   	  <%= render partial: "listings", locals: { term: listing } %>
      <% end %>
   </div>

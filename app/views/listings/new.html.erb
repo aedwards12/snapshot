@@ -1,0 +1,14 @@
+<%= form_for(@listing, url: listings_path) do |form| %>
+
+	<%= hidden_field_tag 'id', current_user.id %>
+	<%= form.label :available_from %>
+	<%= form.datetime_local_field  :available_from %>
+
+	<%= form.label :available_to %>
+	<%= form.datetime_local_field  :available_to %>
+
+	<%= form.label :address %>
+	<%= form.text_field :address %>
+
+	<%= form.submit %>
+<% end %>

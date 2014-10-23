@@ -18,6 +18,9 @@ class Listing < ActiveRecord::Base
   #add description after address for search for occasion 
 
   geocoded_by :address
+#   validates :user_id, :available_from, :available_to, :address, presence: true, on: :create
+#   validates :user_id, :available_from, :available_to, :address, presence: true, on: :update
+
   after_validation :geocode
 
   belongs_to :host, class_name: :User, foreign_key: :user_id
@@ -27,5 +30,7 @@ class Listing < ActiveRecord::Base
   has_many :testimonials
   has_many :photos, as: :photographable
 
+  # scope :all_listings, -> { where(submitted: true) }
+  # scope :listing, ->(id) { where("id = ?", id.to_i)}
 
 end
