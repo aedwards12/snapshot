@@ -1,6 +1,6 @@
 
 
-<%= form_tag("/listings", method: "get") do %>
+<%= form_tag(listings_searchable_search_results_path, method: "get") do %>
   <div class="row">
     <div class="small-3 columns">
       <%= label_tag("search_text", "") %>

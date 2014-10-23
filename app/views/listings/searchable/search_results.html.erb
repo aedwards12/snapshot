@@ -1,0 +1,17 @@
+<section class="row">
+	<aside class="columns small-12 medium-12 large-6 color">
+	  <div class="callout panel">
+	    <div id="map-canvas"></div>
+	  </div>
+  </aside>
+
+  <div class="columns small-12 medium-6 large-6" >
+  	<h1>Listings</h1>
+			<% @search_results.each do |listing| %>
+  	  <%= render partial: "listings", locals: { term: listing } %>
+     <% end %>
+  </div>
+</section>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLaewY8pVnG3ntSNuNmg9Axn8XodRAczY">
+</script>
