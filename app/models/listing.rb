@@ -27,5 +27,7 @@ class Listing < ActiveRecord::Base
   has_many :testimonials
   has_many :photos, as: :photographable
 
+  # scope :all_listings, -> { where(submitted: true) }
+  scope :listing, ->(id) { where("id = ?", id.to_i)}
 
 end
