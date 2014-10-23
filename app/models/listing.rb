@@ -18,8 +18,8 @@ class Listing < ActiveRecord::Base
   #add description after address for search for occasion 
 
   geocoded_by :address
-  validates :user, :available_from, :available_to, :address, presence: true, on: :create
-  validates :user, :available_from, :available_to, :address, presence: true, on: :update
+#   validates :user_id, :available_from, :available_to, :address, presence: true, on: :create
+#   validates :user_id, :available_from, :available_to, :address, presence: true, on: :update
 
   after_validation :geocode
 

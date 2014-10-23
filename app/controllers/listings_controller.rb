@@ -3,23 +3,23 @@ class ListingsController < ApplicationController
 	def index
 		# should be Listing.all
 		# search = PgSearch.multisearch("New York")
-		load_listings
-		
-		text_search = Listing.listing_search(params[:search_text])		
-		p search = text_search
+		@listings = load_listings
 
-		if params[:start_date] != "" && params[:end_date] != ""
-			start_date_search = Listing.where(available_from: params[:start_date])
-			end_date_search = Listing.where(available_to: params[:end_date])
-			search = text_search & start_date_search & end_date_search
-		end
+		# text_search = Listing.listing_search(params[:search_text])		
+		# p search = text_search
 
-		@collection = []
-		search.each do |item|
-		  @collection << Listing.find(item.id)
-	  end
+		# if params[:start_date] != "" && params[:end_date] != ""
+		# 	start_date_search = Listing.where(available_from: params[:start_date])
+		# 	end_date_search = Listing.where(available_to: params[:end_date])
+		# 	search = text_search & start_date_search & end_date_search
+		# end
 
-	  @collection
+		# @collection = []
+		# search.each do |item|
+		#   @collection << Listing.find(item.id)
+	 #  end
+
+	 #  @collection
 	end
 
 	def show
@@ -64,7 +64,7 @@ class ListingsController < ApplicationController
 
 	def build_listing
 		@listing ||= listing_scope.build
-		@listing.attribute = listing_params
+		# @listing.attribute = listing_params
 	end
 
 	def save_listing
@@ -75,7 +75,7 @@ class ListingsController < ApplicationController
 
 	def listing_params
 		listing_params = params[:listing]
-		listing_params ? listing_params.permit(user, :address, :available_to, :available_from) : {}
+		listing_params ? listing_params.permit(:user_id, :address, :available_to, :available_from) : {}
 	end
 
 	def listing_scope 
