@@ -1,6 +1,7 @@
 <%= form_for(@listing, url: listings_path) do |form| %>
 
-	<%= hidden_field_tag 'id', current_user.id %>
+	<%= hidden_field_tag 'listing[user_id]', current_user.id %>
+	<!-- <%= form.label :user %> -->
 	<%= form.label :available_from %>
 	<%= form.datetime_local_field  :available_from %>
 
@@ -12,3 +13,5 @@
 
 	<%= form.submit %>
 <% end %>
+
+<%= current_user.id %>

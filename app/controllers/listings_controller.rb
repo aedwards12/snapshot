@@ -1,10 +1,7 @@
 class ListingsController < ApplicationController
 
 	def index
-		# should be Listing.all
-		# search = PgSearch.multisearch("New York")
 		@listings = load_listings
-
 	end
 
 	def show
@@ -70,7 +67,7 @@ class ListingsController < ApplicationController
 
 	def build_listing
 		@listing ||= listing_scope.build
-		# @listing.attribute = listing_params
+		@listing.attributes = listing_params
 	end
 
 	def save_listing
@@ -80,8 +77,8 @@ class ListingsController < ApplicationController
 	end
 
 	def listing_params
-		listing_params = params[:listing]
-		listing_params ? listing_params.permit(:user_id, :address, :available_to, :available_from) : {}
+		 listing_params = params[:listing]
+		 listing_params ? listing_params.permit(:user_id, :address, :available_to, :available_from) : {}
 	end
 
 	def listing_scope 

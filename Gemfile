@@ -48,6 +48,8 @@ end
 
 group :test do 
 	gem 'rspec-rails', '~> 3.0.0'
+	gem 'rspec-collection_matchers'
+
 	# gem 'faker', '~> 1.4.3'
   gem 'capybara', '~> 2.4.4'
 	gem 'database_cleaner', '~> 1.3.0'

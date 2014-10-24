@@ -7,7 +7,7 @@ describe Listing do
 	# end
 	before(:each) do 
 				address ="#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state}"
-				@user1 = User.new(name: Faker::Name.name, email: Faker::Internet.email, address: address)
+				@user1 = User.create(name: Faker::Name.name, email: Faker::Internet.email, address: address)
 	end 
 		
 	it "is valid with a address, available_from, available_to, user_id" do 
@@ -16,7 +16,9 @@ describe Listing do
 	end 
 
 	it "is invalid without an address" do 
-		
+		address ="#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state}"
+		@user1 = User.create(name: Faker::Name.name, email: Faker::Internet.email, address: address)
+		expect(Listing.new(user_id: @user1, available_to: Time.now, available_from: Time.now, address: nil)).to have(1).errors_on(:address)	
 	end 
 
 	it "is invalid without an available_to"
