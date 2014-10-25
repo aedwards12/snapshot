@@ -1,10 +1,13 @@
 
- <article class="listing columns small-12 medium-12 large-6">
-		<p id="address"><%= term.address %></p>
-		<p><%= term.available_from %></p>
-		<p><%= term.available_to %></p>
-		<p id="lat"><%= term.latitude %></p>
-		<p id="long"><%= term.longitude %></p>
+  <article class="listing columns small-12 medium-12 large-6">
+ 	<ul class="listing-ul-list">
+ 		<%= link_to "View Listing", listing %>
+ 		<li id="address" class="listing-ul-line"> Address: <%= listing.address %></li>
+ 		<li class="listing-ul-line">available from: <%= listing.available_from %></li>
+ 		<li class="listing-ul-line">available to: <%= listing.available_to %></li>
+		<div class="lat-long">
+		<li id="lat" class="listing-ul-line"><%= listing.latitude %></li>
+		<li id="long" class="listing-ul-line"><%= listing.longitude %></li>
+		</div>
+	</ul>
 	</article> 
-
-  

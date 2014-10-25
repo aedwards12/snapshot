@@ -1,0 +1,17 @@
+<div class="columns small-12 medium-6 large-4 color listing-show">
+
+  <%= link_to "edit user", edit_user_path(@user)%>
+
+	<div class="user-wrapper">
+		<div class="user-stats">
+			<%= @user.name %></br>
+			<%= @user.address %>
+		</div>
+	</div>
+
+	<div class="my-listing">
+		<% @user.listings.each do |listing| %>
+			<%= link_to "listing", listing %>
+		<% end %>
+	</div>
+</div>

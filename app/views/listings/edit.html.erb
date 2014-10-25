@@ -1,5 +1,5 @@
 <div class="columns small-12 medium-6 large-4 color listing-show">
-<%= form_for(@listing, url: listings_path) do |form| %>
+<%= form_for @listing do |form| %>
 
 	<%= hidden_field_tag 'listing[user_id]', current_user.id %>
 	<!-- <%= form.label :user %> -->

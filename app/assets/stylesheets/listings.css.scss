@@ -11,7 +11,13 @@
 	background-color:rgba(235,255,255,.8);
 	padding: 1em 0em;
 }
+.lat-long{
+	display: none;
+}
 
+.edit_listing input{
+	width: 3em;
+}
 
 /*google maps*/
  html { height: 100% }
