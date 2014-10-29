@@ -9,7 +9,9 @@ class ListingsController < ApplicationController
 	end
 
 	def new
-		build_listing
+		# @listing = build_listing
+		@listing =Listing.new
+		@listing.photos.build
 	end
 
 	def create
@@ -56,14 +58,14 @@ class ListingsController < ApplicationController
 	end
 
 	def save_listing
-		if @listing.save
-			redirect_to @listing
-		end
+			if @listing.save
+				redirect_to @listing
+	  end
 	end
 
 	def listing_params
 		 listing_params = params[:listing]
-		 listing_params ? listing_params.permit(:user_id, :address, :available_to, :available_from) : {}
+		 listing_params ? listing_params.permit(:user_id, :address, :available_to, :available_from, photos_attributes: [:image]) : {}
 	end
 
 	def listing_scope 

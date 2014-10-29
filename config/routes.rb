@@ -22,7 +22,8 @@ Rails.application.routes.draw do
      end
     resources :listings
   end
-  resources :listings  
+  resources :listings 
+  resource :photos 
   # get '/users/:user_id/listings' => 'user#user_listings' 
 
   get '/listings/searchable/search_results' => 'listings#search_results' 

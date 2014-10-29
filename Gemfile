@@ -40,6 +40,8 @@ gem 'foundation-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'dragonfly'
+gem 'dragonfly-s3_data_store'
 
 group :development, :test do 
   gem 'rspec-rails', '~> 3.0.0'

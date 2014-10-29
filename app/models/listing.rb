@@ -7,6 +7,8 @@ class Listing < ActiveRecord::Base
   has_many :tags, through: :tagables
   has_many :testimonials
   has_many :photos, as: :photographable
+  accepts_nested_attributes_for :photos
+
 
   validates_presence_of :user_id, :address
   after_validation :geocode
