@@ -3,6 +3,11 @@
   <%= link_to "edit user", edit_user_path(@user)%>
 
 	<div class="user-wrapper">
+		<% if @user.photos[0].image %>
+
+	<%= link_to image_tag(@user.photos[0].image.thumb('400x200#').url(name: @user.photos[0].image_uid), alt: @user.photos[0].title,  class:'images', id: :"#openModal", :"data-id" => @user.photos[0].image_uid, :"data-reveal-id" => "pictureModal"  ),
+                    'http://d3ebkpuip3423r.cloudfront.net'+@user.photos[0].image_uid, target: '_blank' %>
+    <% end %>
 		<div class="user-stats">
 			<%= @user.name %></br>
 			<%= @user.address %>

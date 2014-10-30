@@ -20,6 +20,8 @@ class UsersController < ApplicationController
 	def edit
 		load_user
 		build_user
+		@user.photos.build
+
 	end
 
 	def update
@@ -61,7 +63,7 @@ class UsersController < ApplicationController
 
 	def user_params
 		 user_params = params[:user]
-		 user_params ? user_params.permit(:name, :address) : {}
+		 user_params ? user_params.permit(:name, :address, photos_attributes: [:image]) : {}
 	end
 
 	def user_scope 
