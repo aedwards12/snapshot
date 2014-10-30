@@ -1,17 +1,30 @@
+
 <div class="columns small-12 medium-6 large-4 color listing-show">
-<%= form_for(@listing, url: listings_path) do |form| %>
 
-	<%= hidden_field_tag 'listing[user_id]', current_user.id %>
-	<!-- <%= form.label :user %> -->
-	<%= form.label :available_from %>
-	<%= form.datetime_local_field  :available_from %>
+<%= form_for @listing, :html => { :multipart => true } do |f| %>
+  <%= hidden_field_tag 'listing[user_id]', current_user.id %>
+	<!-- <%= f.label :user %> -->
+	<%= f.label :available_from %>
+	<%= f.datetime_local_field  :available_from %>
 
-	<%= form.label :available_to %>
-	<%= form.datetime_local_field  :available_to %>
+	<%= f.label :available_to %>
+	<%= f.datetime_local_field  :available_to %>
 
-	<%= form.label :address %>
-	<%= form.text_field :address%>
-
-	<%= form.submit %>
+	<%= f.label :address %>
+	<%= f.text_field :address%>
+ 
+  <div>
+    Upload Image
+    <%= f.fields_for :photos do |ph| %>
+	    <%= ph.label :title, class: 'color' %>
+	    <%= ph.text_field :title, required: true %>
+      <%= ph.file_field :image %>
+    <% end%>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>
+
 </div>

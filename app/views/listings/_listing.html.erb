@@ -11,4 +11,9 @@
 		<li id="long" class="listing-ul-line"><%= listing.longitude %></li>
 		</div>
 	</ul>
+	  <% if listing.photos[0].image %>
+
+	<%= link_to image_tag(listing.photos[0].image.thumb('400x200#').url(name: listing.photos[0].image_uid), alt: listing.photos[0].title,  class:'images', id: :"#openModal", :"data-id" => listing.photos[0].image_uid, :"data-reveal-id" => "pictureModal"  ),
+                    'http://d3ebkpuip3423r.cloudfront.net'+listing.photos[0].image_uid, target: '_blank' %>
+    <% end %>
 	</article> 
