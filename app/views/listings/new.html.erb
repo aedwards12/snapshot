@@ -1,4 +1,5 @@
 
+<div class="columns small-12 medium-6 large-4 color listing-show">
 
 <%= form_for @listing, :html => { :multipart => true } do |f| %>
   <%= hidden_field_tag 'listing[user_id]', current_user.id %>
@@ -15,6 +16,8 @@
   <div>
     Upload Image
     <%= f.fields_for :photos do |ph| %>
+	    <%= ph.label :title, class: 'color' %>
+	    <%= ph.text_field :title, required: true %>
       <%= ph.file_field :image %>
     <% end%>
   </div>
@@ -23,3 +26,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>
