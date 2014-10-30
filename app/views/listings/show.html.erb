@@ -1,3 +1,17 @@
 
-dsfadsfadaf
-<%= @listing.id %>
+<section class="row">
+	<h1>Listing</h1>
+  <div class="columns small-12 listing-wrapper" >
+
+  	<div class="columns small-12 medium-12 large-6 color listing-show">
+	  <div class="callout panel">
+	    <div id="map-canvas"></div>
+	  </div>
+  </div>
+  	
+  	  <%= render partial: "listing", locals: { listing: @listing } %>
+  </div>
+</section>
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLaewY8pVnG3ntSNuNmg9Axn8XodRAczY">
+</script>

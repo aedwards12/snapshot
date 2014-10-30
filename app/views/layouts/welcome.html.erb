@@ -11,6 +11,7 @@
   <ul class="title-area">
     <li class="name">
      <h1> <%= link_to "Snapshot", root_path %></h1>
+
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -19,12 +20,23 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="left">
+      <li><%= link_to "all listing", listings_path %></li>
       <li><%= link_to "create listing", new_listing_path%></li>
     </ul>
-    <ul class="right">
+  <ul class="right">
       <% if user_signed_in? %>
-       <li> Logged in as <strong><%= current_user.email %></strong>.</li>
-       <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+       <li> Logged in as <strong><%= current_user.name %></strong>.</li>
+       
+      <li class="has-dropdown"><a href="#">My Account</a> 
+        <ul class="dropdown">
+          <li><%= link_to 'my listings',  "/users/#{current_user.id}/mylistings", :class => 'navbar-link' %></li>
+          <li><%= link_to "view Profile", user_path(@user.id), :class => 'navbar-link' %></li>
+          <li><%= link_to "edit Profile", edit_user_path(current_user.id), :class => 'navbar-link' %></li>
+          <li><%= link_to 'account setting', edit_user_registration_path, :class => 'navbar-link' %></li>
+        </ul>
+      </li>
+
+       
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
       <% else %>
          <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>

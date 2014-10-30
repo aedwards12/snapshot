@@ -1,4 +1,5 @@
 class Listing::AsSearchable < Listing
+
 include PgSearch
   pg_search_scope :listing_search, :against => [:address], :associated_against => {
     :tags => [:name]
@@ -21,8 +22,8 @@ include PgSearch
 		p search = text_search
 
 		if params[:start_date] != "" && params[:end_date] != ""
-			start_date_search = listing_scope.where(available_from: params[:start_date])
-			end_date_search = listing_scope.where(available_to: params[:end_date])
+			start_date_search = text_search.where(available_from: params[:start_date])
+			end_date_search = text_search.where(available_to: params[:end_date])
 			search = text_search & start_date_search & end_date_search
 		end
 

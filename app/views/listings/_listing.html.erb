@@ -1,0 +1,14 @@
+ <article class="listing columns small-12 medium-12 large-6">
+ 	 		<%= link_to "Edit listing", edit_listing_path(listing)%>
+
+ 	<ul class="listing-ul-list">
+ 		<li class="listing-ul-line">This listing is available for <%= (listing.available_to - Date.today ).to_i %> more day(s)</li>
+ 		<li id="address" class="listing-ul-line"> Address: <%= listing.address %></li>
+ 		<li class="listing-ul-line">available from: <%= listing.available_from.to_formatted_s(:long_ordinal) %></li>
+ 		<li class="listing-ul-line">available to: <%= listing.available_to.to_formatted_s(:long_ordinal) %></li>
+ 		<div class="lat-long">
+		<li id="lat" class="listing-ul-line"><%= listing.latitude %></li>
+		<li id="long" class="listing-ul-line"><%= listing.longitude %></li>
+		</div>
+	</ul>
+	</article> 

@@ -14,7 +14,17 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  # resource :users
+
+  resources :users do
+    member do
+       get 'mylistings'
+     end
+    resources :listings
+  end
   resources :listings  
+  # get '/users/:user_id/listings' => 'user#user_listings' 
+
   get '/listings/searchable/search_results' => 'listings#search_results' 
   get '/post_search' => 'search#search'
   # Example resource route with options:

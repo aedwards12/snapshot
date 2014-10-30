@@ -5,22 +5,38 @@
 .listing {
 	padding: 1em;
 	/*width: 300px;*/
-	border: 1px solid black;
 	margin-bottom: 1em;
 }
+.listing-wrapper{
+	background-color:rgba(235,255,255,.8);
+	padding: 1em 0em;
+}
+.lat-long{
+	display: none;
+}
 
+.edit_listing input{
+	width: 3em;
+}
 
 /*google maps*/
  html { height: 100% }
  body { height: 100%; margin: 0; padding: 0 }
- 
+.callout{
+	position: relative;
+		top: 15px;
+		left: 0px;
+}
 
-aside {
-	width: 25em;
-  height: 60em;
-	padding: 0px;
+.listing-show{
+	overflow: hidden;
 
-	 #map-canvas { min-width: 25em;
-	min-height: 60em; }
+	#map-canvas { 
+	min-width: 20em;
+	min-height: 15em;
+	 }
+}
+.listing-ul-list .listing-ul-line{
+	list-style-type: none;
 }
 
