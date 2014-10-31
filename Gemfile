@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
+gem 'font-awesome-sass'
 # Change database to PostgresQL
 gem 'pg'
 gem 'pg_search'

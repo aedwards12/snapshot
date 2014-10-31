@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin icon-listing-position {
+  	position:relative;
+	  top: 24px;
+	  left:-5px;
+}
+
 .listing {
 	padding: 1em;
 	border-bottom: 1px solid #7f8e96;	
@@ -50,6 +56,18 @@
 	background-color: #f4f9fc;
 	height: 40em;
 	overflow: scroll;
+}
 
+.available{
+@include icon-listing-position;
+	color: green;
+}
+.warning{
+	@include icon-listing-position;
+	color: rgb(252, 138, 51);
+}
+.expired{
+	@include icon-listing-position;
+	color:red;
 }
 
