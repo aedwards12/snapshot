@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
   end
 
 	def index
-		@listings = load_listings
+		@listings = load_listings.available_listing
 	end
 
 	def show 

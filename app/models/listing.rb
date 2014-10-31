@@ -8,6 +8,8 @@ class Listing < ActiveRecord::Base
   has_many :testimonials
   has_many :photos, as: :photographable
   accepts_nested_attributes_for :photos
+  scope :available_listing, ->{ where("available_to > ?", DateTime.now)
+} 
 
 
   validates_presence_of :user_id, :address
