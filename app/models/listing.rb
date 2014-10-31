@@ -35,5 +35,5 @@ class Listing < ActiveRecord::Base
   # validates :user_id, :available_from, :available_to, :address, presence: true, on: :update
   # scope :all_listings, -> { where(submitted: true) }
   # scope :listing, ->(id) { where("id = ?", id.to_i)}
-
+  
 end

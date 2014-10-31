@@ -4,8 +4,13 @@
 
 .listing {
 	padding: 1em;
-	/*width: 300px;*/
-	margin-bottom: 1em;
+	border-bottom: 1px solid #7f8e96;	
+
+}
+
+
+.listing:hover{
+		background-color: #fff;
 }
 .listing-wrapper{
 	background-color:rgba(235,255,255,.8);
@@ -38,5 +43,13 @@
 }
 .listing-ul-list .listing-ul-line{
 	list-style-type: none;
+	font-size: .8em;
+}
+
+.listings-row{
+	background-color: #f4f9fc;
+	height: 40em;
+	overflow: scroll;
+
 }
 

@@ -1,5 +1,14 @@
-<div class="my-listing">
+<div class="row">
+
+	<div class="columns small-12 medium-4 large-3 listings-row" >
 		<% @user.listings.each do |listing| %>
-			<%= link_to "listing", listing %>
-		<% end %>
+
+				 <%= render partial: "listings/listings", locals: { listing: listing } %>
+			<% end %>
 	</div>
+			<div class="large-display-listing small-12 medium-8 large-9">
+			testing
+			</div>
+		
+	</div>	
+</div>

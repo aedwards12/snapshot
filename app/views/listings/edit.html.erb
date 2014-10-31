@@ -14,4 +14,7 @@
 
 	<%= form.submit %>
 <% end %>
+<%= button_to "Delete Listing", { action: "destroy", id: @listing.id },
+                                method: :delete, data: { confirm: "Are you sure?" } %>
+
 </div>
