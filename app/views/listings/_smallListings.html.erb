@@ -9,7 +9,7 @@
  		
  		<% end %>
  	<ul class="listing-ul-list">
- 		<%= link_to "View Listing", listing %>
+ 		<%= link_to "View Listing", listing, remote: true %>
 
  		<li id="address" class="listing-ul-line"> Address: <%= listing.address %></li>
  		<li class="listing-ul-line">available from: <%= listing.available_from %></li>

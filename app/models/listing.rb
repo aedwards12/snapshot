@@ -8,6 +8,8 @@ class Listing < ActiveRecord::Base
   has_many :testimonials
   has_many :photos, as: :photographable
   accepts_nested_attributes_for :photos
+  scope :available_listing, ->{ where("available_to > ?", DateTime.now)
+} 
 
 
   validates_presence_of :user_id, :address
@@ -35,5 +37,5 @@ class Listing < ActiveRecord::Base
   # validates :user_id, :available_from, :available_to, :address, presence: true, on: :update
   # scope :all_listings, -> { where(submitted: true) }
   # scope :listing, ->(id) { where("id = ?", id.to_i)}
-
+  
 end

@@ -1,11 +1,16 @@
 <div class="columns small-12 medium-6 large-4 color user-show">
-<%= form_for @user do |form| %>
+<%= form_for @user,:html => { :multipart => true }  do |form| %>
 	<!-- <%= form.label :user %> -->
 	<%= form.label :name %>
 	<%= form.text_field  :name %>
 	<%= form.label :address %>
 	<%= form.text_field  :address %>
-
+<div>
+    Upload Image
+    <%= form.fields_for :photos do |ph| %>
+    <%= ph.file_field :image %>
+    <% end%>
+  </div>
 
 	<%= form.submit %>
 <% end %>

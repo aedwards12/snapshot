@@ -1,7 +1,17 @@
 class ListingsController < ApplicationController
+	before_filter :require_permission, only: [:edit, :update, :destroy] 
+  respond_to :html, :js
+
+
+	def require_permission
+    if current_user.id != Listing.find(params[:id]).user_id
+      redirect_to root_path
+      #Or do something else here
+    end
+  end
 
 	def index
-		@listings = load_listings
+		@listings = load_listings.available_listing
 	end
 
 	def show 

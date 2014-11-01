@@ -1,0 +1,21 @@
+ <article class="large-listing columns small-12 medium-12 large-6">
+ 	 		<%= link_to "Edit listing", edit_listing_path(listing)%>
+
+ 	<ul class="large-listing-ul-list">
+ 		<li class="large-listing-ul-line">This listing is available for <%= (listing.available_to - Date.today ).to_i %> more day(s)</li>
+ 		<li id="address" class="large-listing-ul-line"> Address: <%= listing.address %></li>
+ 		<li class="large-listing-ul-line">available from: <%= listing.available_from.to_formatted_s(:long_ordinal) %></li>
+ 		<li class="large-listing-ul-line">available to: <%= listing.available_to.to_formatted_s(:long_ordinal) %></li>
+ 		<div class="lat-long">
+		<li id="lat" class="large-listing-ul-line"><%= listing.latitude %></li>
+		<li id="long" class="large-listing-ul-line"><%= listing.longitude %></li>
+		</div>
+	</ul>
+	<% if listing.photos.length >= 1 %>
+	  <% if listing.photos[0].image %>
+
+		<%= link_to image_tag(listing.photos[0].image.thumb('400x200#').url(name: listing.photos[0].image_uid), alt: listing.photos[0].title,  class:'images', id: :"#openModal", :"data-id" => listing.photos[0].image_uid, :"data-reveal-id" => "pictureModal"  ),
+	                    'http://d3ebkpuip3423r.cloudfront.net'+listing.photos[0].image_uid, target: '_blank' %>
+    <% end %>
+   <% end %> 
+	</article> 
