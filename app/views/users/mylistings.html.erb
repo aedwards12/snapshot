@@ -3,11 +3,15 @@
 	<div class="columns small-12 medium-4 large-3 listings-row" >
 		<% @user.listings.each do |listing| %>
 
-				 <%= render partial: "listings/listings", locals: { listing: listing } %>
+				 <%= render partial: "listings/smallListings", locals: { listing: listing } %>
 			<% end %>
 	</div>
 			<div class="large-display-listing small-12 medium-8 large-9">
-			testing
+				<div id="large-list" class"columns small-10 large-listing small-center">
+
+			   <%= render partial: "listings/largelisting", locals: { listing: @user.listings[0] } %>
+				
+			</div>
 			</div>
 		
 	</div>	

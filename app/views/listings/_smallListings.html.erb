@@ -1,0 +1,22 @@
+
+  <article class="listing columns small-12">
+  	<% if (listing.available_to - Date.today).to_i  >= 2%>
+			<i class="fa fa-circle available"></i>
+		<% elsif (listing.available_to - Date.today).to_i == 1 %>	
+      <i class="fa fa-circle-o warning"></i>
+	  <% elsif (listing.available_to - Date.today).to_i <= 0 %>	
+			<i class="fa fa-dot-circle-o expired"></i>
+ 		
+ 		<% end %>
+ 	<ul class="listing-ul-list">
+ 		<%= link_to "View Listing", listing, remote: true %>
+
+ 		<li id="address" class="listing-ul-line"> Address: <%= listing.address %></li>
+ 		<li class="listing-ul-line">available from: <%= listing.available_from %></li>
+ 		<li class="listing-ul-line">available to: <%= listing.available_to %></li>
+		<div class="lat-long">
+		<li id="lat" class="listing-ul-line"><%= listing.latitude %></li>
+		<li id="long" class="listing-ul-line"><%= listing.longitude %></li>
+		</div>
+	</ul>
+	</article> 

@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
 	before_filter :require_permission, only: [:edit, :update, :destroy] 
+  respond_to :html, :js
 
 
 	def require_permission
